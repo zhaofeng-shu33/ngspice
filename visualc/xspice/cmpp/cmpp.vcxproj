@@ -157,22 +157,22 @@
   <ItemGroup>
     <CustomBuild Include="..\..\..\src\xspice\cmpp\ifs_lex.l">
       <Message>invoke win_flex.exe for %(Identity)</Message>
-      <Command>..\..\..\..\flex-bison\win_flex.exe --outfile=.\tmp-bison\%(Filename).c --header-file=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
+      <Command>win_flex.exe --outfile=.\tmp-bison\%(Filename).c --header-file=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
       <Outputs>.\tmp-bison\%(Filename).c;.\tmp-bison\%(Filename).h</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\src\xspice\cmpp\ifs_yacc.y">
       <Message>invoke win_bison.exe for %(Identity)</Message>
-      <Command>..\..\..\..\flex-bison\win_bison.exe --output=.\tmp-bison\%(Filename).c --defines=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
+      <Command>win_bison.exe --output=.\tmp-bison\%(Filename).c --defines=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
       <Outputs>.\tmp-bison\%(Filename).c;.\tmp-bison\%(Filename).h</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\src\xspice\cmpp\mod_lex.l">
       <Message>invoke win_flex.exe for %(Identity)</Message>
-      <Command>..\..\..\..\flex-bison\win_flex.exe --outfile=.\tmp-bison\%(Filename).c --header-file=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
+      <Command>win_flex.exe --outfile=.\tmp-bison\%(Filename).c --header-file=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
       <Outputs>.\tmp-bison\%(Filename).c;.\tmp-bison\%(Filename).h</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\src\xspice\cmpp\mod_yacc.y">
       <Message>invoke win_bison.exe for %(Identity)</Message>
-      <Command>..\..\..\..\flex-bison\win_bison.exe --output=.\tmp-bison\%(Filename).c --defines=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
+      <Command>win_bison.exe --output=.\tmp-bison\%(Filename).c --defines=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
       <Outputs>.\tmp-bison\%(Filename).c;.\tmp-bison\%(Filename).h</Outputs>
     </CustomBuild>
     <None Include="..\src\xspice\icm\objects.inc" />

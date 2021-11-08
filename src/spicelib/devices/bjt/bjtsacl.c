@@ -168,8 +168,8 @@ BJTsAcLoad(GENmodel *inModel, CKTcircuit *ckt)
                 *(here->BJTsenCsub)= *(ckt->CKTstate0 + here->BJTcqsub);
                 *(here->BJTsenCmcb)= *(ckt->CKTstate0 + here->BJTcexbc);
             }
-            gcpr = here->BJTtcollectorConduct;
-            gepr = here->BJTtemitterConduct;
+            gcpr = here->BJTtcollectorConduct * A0;
+            gepr = here->BJTtemitterConduct * A0;
             gpi= *(here->BJTsenGpi);
             gmu= *(here->BJTsenGmu);
             gm= *(here->BJTsenGm);
@@ -465,8 +465,8 @@ pertvcs:    /* Perturbation of vcs */
             goto next2;
 
 load:
-            gcpr=here->BJTtcollectorConduct;
-            gepr=here->BJTtemitterConduct;
+            gcpr=here->BJTtcollectorConduct * here->BJTarea;
+            gepr=here->BJTtemitterConduct * here->BJTarea;
             gpi= *(here->BJTsenGpi + flag+1);
             gmu= *(here->BJTsenGmu + flag+1);
             gm= *(here->BJTsenGm + flag+1);

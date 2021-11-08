@@ -405,8 +405,6 @@ extern int PZpost(CKTcircuit *);
 extern int PZaskQuest(CKTcircuit *, JOB *, int , IFvalue *);
 extern int PZsetParm(CKTcircuit *, JOB *, int , IFvalue *);
 
-extern int OPtran(CKTcircuit *, int);
-
 #ifdef WANT_SENSE2
 extern int SENaskQuest(CKTcircuit *, JOB *, int , IFvalue *);
 extern void SENdestroy(SENstruct *);

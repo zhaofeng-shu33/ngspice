@@ -70,12 +70,8 @@ ft_evaluate(struct pnode *node)
         d = NULL;
     }
 
-    if (d == NULL) {
-        if (node && node->pn_name) {
-            fprintf(stderr, "  in term: %s\n\n", node->pn_name);
-        }
+    if (d == NULL)
         return NULL;
-    }
 
     if (node->pn_name && !ft_evdb && d && !d->v_link2) {
         if (d->v_name)

@@ -242,7 +242,8 @@
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
-      <Command>make-install-vngspiced.bat $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <Manifest>
       <AdditionalManifestFiles>$(ProjectDir)ngspice-x86.exe.manifest</AdditionalManifestFiles>
@@ -293,7 +294,6 @@
     </Link>
     <PostBuildEvent>
       <Command>
-      make-install-vngspice.bat $(OutDir)
       </Command>
     </PostBuildEvent>
     <Manifest>
@@ -311,7 +311,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\src\maths\poly;..\src\frontend;..\src\spicelib\devices;tmp-bison;src\include;..\src\spicelib\parser;..\src\include;..\src\include\cppduals;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;SIMULATOR;XSPICE;_MSC_PLATFORM_TOOLSET=$(PlatformToolsetVersion);NGDEBUG;CONFIG64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;SIMULATOR;XSPICE;_MSC_PLATFORM_TOOLSET=$(PlatformToolsetVersion);NGDEBUG;CONFIG64;CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -329,7 +329,7 @@
     <Link>
       <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <HeapReserveSize>0</HeapReserveSize>
       <HeapCommitSize>0</HeapCommitSize>
       <StackReserveSize>4194304</StackReserveSize>
@@ -342,7 +342,6 @@
     </Link>
     <PostBuildEvent>
       <Command>
-      make-install-vngspiced.bat $(OutDir) 64
       </Command>
     </PostBuildEvent>
     <Manifest>
@@ -399,7 +398,6 @@
     </Link>
     <PostBuildEvent>
       <Command>
-      make-install-vngspice.bat $(OutDir) 64
       </Command>
     </PostBuildEvent>
     <Manifest>
@@ -444,7 +442,8 @@
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
-      <Command>make-install-vngspiced.bat $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <Manifest>
       <AdditionalManifestFiles>$(ProjectDir)ngspice-x86.exe.manifest</AdditionalManifestFiles>
@@ -494,7 +493,8 @@
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
-      <Command>make-install-vngspice.bat $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <Manifest>
       <AdditionalManifestFiles>$(ProjectDir)ngspice-x86.exe.manifest</AdditionalManifestFiles>
@@ -542,7 +542,6 @@
     </Link>
     <PostBuildEvent>
       <Command>
-      make-install-vngspiced.bat $(OutDir) 64
       </Command>
     </PostBuildEvent>
     <Manifest>
@@ -597,7 +596,6 @@
     </Link>
     <PostBuildEvent>
       <Command>
-      make-install-vngspice.bat $(OutDir) 64
       </Command>
     </PostBuildEvent>
     <Manifest>
@@ -649,7 +647,8 @@
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
-      <Command>make-install-vngspice.bat $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <Manifest>
       <AdditionalManifestFiles>$(ProjectDir)ngspice-x86.exe.manifest</AdditionalManifestFiles>
@@ -706,7 +705,6 @@
     </Link>
     <PostBuildEvent>
       <Command>
-      make-install-vngspice.bat $(OutDir) 64
       </Command>
     </PostBuildEvent>
     <Manifest>
@@ -758,7 +756,8 @@
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
-      <Command>make-install-vngspice.bat $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <Manifest>
       <AdditionalManifestFiles>$(ProjectDir)ngspice-x86.exe.manifest</AdditionalManifestFiles>
@@ -813,7 +812,6 @@
     </Link>
     <PostBuildEvent>
       <Command>
-      make-install-vngspice.bat $(OutDir) 64
       </Command>
     </PostBuildEvent>
     <Manifest>
@@ -862,7 +860,6 @@
     <ClInclude Include="..\src\frontend\com_state.h" />
     <ClInclude Include="..\src\frontend\com_strcmp.h" />
     <ClInclude Include="..\src\frontend\com_unset.h" />
-    <ClInclude Include="..\src\frontend\com_wr_ic.h" />
     <ClInclude Include="..\src\frontend\control.h" />
     <ClInclude Include="..\src\frontend\cpitf.h" />
     <ClInclude Include="..\src\frontend\define.h" />
@@ -1168,7 +1165,6 @@
     <ClInclude Include="..\src\spicelib\devices\cktaccept.h" />
     <ClInclude Include="..\src\spicelib\devices\cpl\cpldefs.h" />
     <ClInclude Include="..\src\spicelib\devices\cpl\cplext.h" />
-    <ClInclude Include="..\src\spicelib\devices\cpl\cplhash.h" />
     <ClInclude Include="..\src\spicelib\devices\cpl\cplinit.h" />
     <ClInclude Include="..\src\spicelib\devices\cpl\cplitf.h" />
     <ClInclude Include="..\src\spicelib\devices\csw\cswdefs.h" />
@@ -1454,7 +1450,6 @@
     <ClCompile Include="..\src\frontend\com_measure2.c" />
     <ClCompile Include="..\src\frontend\com_option.c" />
     <ClCompile Include="..\src\frontend\com_plot.c" />
-    <ClCompile Include="..\src\frontend\com_wr_ic.c" />
     <ClCompile Include="..\src\frontend\com_rehash.c" />
     <ClCompile Include="..\src\frontend\com_set.c" />
     <ClCompile Include="..\src\frontend\com_setscale.c" />
@@ -1705,7 +1700,6 @@
     <ClCompile Include="..\src\spicelib\analysis\ninteg.c" />
     <ClCompile Include="..\src\spicelib\analysis\noisean.c" />
     <ClCompile Include="..\src\spicelib\analysis\nsetparm.c" />
-    <ClCompile Include="..\src\spicelib\analysis\optran.c" />
     <ClCompile Include="..\src\spicelib\analysis\pssaskq.c" />
     <ClCompile Include="..\src\spicelib\analysis\pssinit.c" />
     <ClCompile Include="..\src\spicelib\analysis\psssetp.c" />
@@ -2053,12 +2047,9 @@
     <ClCompile Include="..\src\spicelib\devices\cktsoachk.c" />
     <ClCompile Include="..\src\spicelib\devices\cpl\cpl.c" />
     <ClCompile Include="..\src\spicelib\devices\cpl\cplask.c" />
-    <ClCompile Include="..\src\spicelib\devices\cpl\cpldelete.c" />
-    <ClCompile Include="..\src\spicelib\devices\cpl\cplhash.c" />
     <ClCompile Include="..\src\spicelib\devices\cpl\cplinit.c" />
     <ClCompile Include="..\src\spicelib\devices\cpl\cplload.c" />
     <ClCompile Include="..\src\spicelib\devices\cpl\cplmask.c" />
-    <ClCompile Include="..\src\spicelib\devices\cpl\cplmdel.c" />
     <ClCompile Include="..\src\spicelib\devices\cpl\cplmpar.c" />
     <ClCompile Include="..\src\spicelib\devices\cpl\cplparam.c" />
     <ClCompile Include="..\src\spicelib\devices\cpl\cplsetup.c" />
@@ -2729,12 +2720,12 @@
   <ItemGroup>
     <CustomBuild Include="..\src\frontend\parse-bison.y">
       <Message>invoke win_bison.exe for %(Identity)</Message>
-      <Command>..\..\flex-bison\win_bison.exe --output=.\tmp-bison\%(Filename).c --defines=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
+      <Command>win_bison.exe --output=.\tmp-bison\%(Filename).c --defines=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
       <Outputs>.\tmp-bison\%(Filename).c;.\tmp-bison\%(Filename).h</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\src\spicelib\parser\inpptree-parser.y">
       <Message>invoke win_bison.exe for %(Identity)</Message>
-      <Command>..\..\flex-bison\win_bison.exe --output=.\tmp-bison\%(Filename).c --defines=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
+      <Command>win_bison.exe --output=.\tmp-bison\%(Filename).c --defines=.\tmp-bison\%(Filename).h %(Identity) || exit 1</Command>
       <Outputs>.\tmp-bison\%(Filename).c;.\tmp-bison\%(Filename).h</Outputs>
     </CustomBuild>
   </ItemGroup>

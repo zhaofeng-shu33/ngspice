@@ -192,11 +192,8 @@ endif
 endif
 
 if WINRESOURCE
-ngspice_SOURCES += ngicon.rc
+ngspice_LDADD += ngicon.o
 endif
-
-.rc.lo:
-	$(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --tag=RC --mode=compile $(RC) $(RCFLAGS) $< -o $@
 
 if OLDAPPS
 ## nutmeg:
@@ -309,7 +306,7 @@ ngmakeidx_LDADD =  \
 	frontend/libfte.la \
 	frontend/parser/libparser.la \
 	misc/libmisc.la
-
+    
 ## create index for online help:
 
 ngspice.idx: ngmakeidx$(EXEEXT) $(srcdir)/ngspice.txt

@@ -34,7 +34,7 @@ int readAsciiData(const char *fileName, int impType, DOPtable **ppTable)
         (void) fprintf(cp_err, "unable to open SUPREM file \"%s\": %s\n",
                 fileName, strerror(errno));
         xrc = -1;
-        return xrc; /* return immediately, nothing to free */
+        goto EXITPOINT;
     }
 
     /* Get sign of concentrations */
@@ -156,15 +156,16 @@ int readSupremData(const char *fileName, int fileType, int impType,
 
     /* read the Suprem data file */
     if ( fileType == 0 ) { /* BINARY FILE */
-        xrc = SUPbinRead(fileName, x, conc, &impType, &numNodes);
+        const int  rc = SUPbinRead(fileName, x, conc, &impType,
+            &numNodes);
+        if (rc != 0) {
+            (void) fprintf(cp_err, "Data input failed.\n");
+            xrc = -1;
+            goto EXITPOINT;
+        }
     }
     else {
-        xrc = SUPascRead( fileName, x, conc, &impType, &numNodes );
-    }
-    if (xrc != 0) {
-        (void) fprintf(cp_err, "Data input failed.\n");
-        xrc = -1;
-        return xrc; /* return immediately, nothing to free */
+      SUPascRead( fileName, x, conc, &impType, &numNodes );
     }
 
     /* allocate 2-D array to read in data of x-coordinate and N(x) */
@@ -199,7 +200,7 @@ int readSupremData(const char *fileName, int fileType, int impType,
 	printf("%e     %e\n", profileData[ 0 ][ index ], profileData[ 1 ][ index ]);
     }
     */
-
+EXITPOINT:
     if (xrc != 0) {
         free_profile_data(profileData);
         free(tmpTable);

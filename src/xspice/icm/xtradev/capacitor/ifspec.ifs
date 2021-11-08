@@ -39,7 +39,7 @@ NON-STANDARD FEATURES
 
 NAME_TABLE:
 
-Spice_Model_Name:      capacitoric
+Spice_Model_Name:      capacitor
 C_Function_Name:       cm_capacitor
 Description:           "Capacitor with voltage initial condition"
 
